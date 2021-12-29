@@ -46,13 +46,7 @@ let read str =
           aux (advance t)
     in
     let str, t = aux t in
-    let atom =
-      match int_of_string_opt str with
-      | Some i ->
-          Sexp.Integer i
-      | None ->
-          Sexp.Atom str
-    in
+    let atom = Sexp.atom_of_string str in
     (atom, t)
   in
   let sexp, _ = parse t in

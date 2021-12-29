@@ -1,2 +1,5 @@
 (test
  (name mad))
+
+(cram
+ (deps %{bin:mad}))
